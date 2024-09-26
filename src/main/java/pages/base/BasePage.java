@@ -15,14 +15,14 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void openPage (String url){
+    public void openPage(String url) {
         driver.get(url);
     }
 
-    public WebElement waitElementIsVisible(WebElement element){
-        new WebDriverWait(driver, EXPLICIT_WAIT).until(ExpectedConditions.visibilityOf(element));
+    public WebElement waitElementIsVisible(WebElement element) {
+        new WebDriverWait(driver, EXPLICIT_WAIT)
+                .until(ExpectedConditions.visibilityOf(element));
         return element;
     }
-
 
 }
