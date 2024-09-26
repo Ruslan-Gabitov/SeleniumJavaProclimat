@@ -2,6 +2,7 @@ package pages.main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pages.base.BasePage;
 
 public class MainPage extends BasePage {
@@ -16,6 +17,13 @@ public class MainPage extends BasePage {
     private final By LOCATOR_REGISTRATION_BUTTON = By.xpath(".//div[@class='inner-table-block']//a");
     private final By LOCATOR_TAG_TITLE = By.xpath(",//title");
 
+    public MainPage openPageRegistration() {
+        waitElementIsVisible(driver.findElement(LOCATOR_MY_OFFICE)).click();
+        waitElementIsVisible(driver.findElement(LOCATOR_REGISTRATION_BUTTON)).click();
+        waitElementAppearDOM(LOCATOR_TAG_TITLE);
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Регистрация";
+        Assert.assertEquals(actualTitle, expectedTitle, "Titles do not match");
         return this;
     }
 }
