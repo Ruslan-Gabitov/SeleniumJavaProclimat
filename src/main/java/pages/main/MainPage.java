@@ -15,4 +15,10 @@ public class MainPage extends BasePage {
     private final By USER_PASSWORD_POPUP = By.xpath(".//input[@id='USER_PASSWORD_POPUP']");
     private final By REGISTRATION_BUTTON = By.xpath(".//div[@class='inner-table-block']//a");
 
+    public MainPage openWindowRegistration(){
+        waitElementIsVisible(driver.findElement(MY_OFFICE)).click();
+        waitElementIsVisible(driver.findElement(REGISTRATION_BUTTON)).click();
+
+        return this;
+    }
 }
