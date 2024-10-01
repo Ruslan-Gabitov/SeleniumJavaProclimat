@@ -40,8 +40,9 @@ public class BasePage {
                 .perform();
     }
 
-    public void moveToElement(WebElement element){
+    public WebElement moveToElement(WebElement element){
         new Actions(driver).moveToElement(element);
+        return element;
     }
 
 }
