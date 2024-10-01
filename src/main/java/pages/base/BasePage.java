@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
 
 import static common.Config.EXPLICIT_WAIT;
 
@@ -29,6 +30,14 @@ public class BasePage {
     public void waitElementAppearDOM(By locator) {
         new WebDriverWait(driver, EXPLICIT_WAIT)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public void clickOffsetFromSelectedElement(WebElement element, int x, int y){
+        new Actions(driver).moveToElement(element)
+                .moveByOffset(x, y)
+                .click()
+                .build()
+                .perform();
     }
 
 }
