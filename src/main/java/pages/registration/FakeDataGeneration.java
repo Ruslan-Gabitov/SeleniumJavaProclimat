@@ -29,7 +29,7 @@ public class FakeDataGeneration {
         registrationData.put("fullName", faker.name().fullName());
         registrationData.put("phoneNumber", faker.phoneNumber().phoneNumber());
         registrationData.put("email", getRandomString() + "@qamail.ru");
-        registrationData.put("password", "123456");
+        registrationData.put("password", "12345678");
 
         return registrationData;
 
