@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class FakeDataGeneration {
+
     private static String getRandomString() {
         String SALTCHARS = "abcdefghijklmnopqrstuvwxyzZ1234567890";
         StringBuilder salt = new StringBuilder();
@@ -28,6 +29,7 @@ public class FakeDataGeneration {
         registrationData.put("fullName", faker.name().fullName());
         registrationData.put("phoneNumber", faker.phoneNumber().phoneNumber());
         registrationData.put("email", getRandomString() + "@qamail.ru");
+        registrationData.put("password", "123456");
 
         return registrationData;
 
