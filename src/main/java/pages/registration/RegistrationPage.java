@@ -14,6 +14,7 @@ public class RegistrationPage extends BasePage {
     private final By LOCATOR_INPUT_PHONE = By.xpath(".//input[@id='input_PERSONAL_PHONE']");
     private final By LOCATOR_INPUT_PASSWORD = By.xpath(".//input[@id='input_PASSWORD']");
     private final By LOCATOR_INPUT_CONFIRM_PASSWORD = By.xpath(".//input[@id='input_CONFIRM_PASSWORD']");
-
+    private final By LOCATOR_CHECKBOX_PERSONAL_DATA = By.xpath(".//label[@for='licenses_register']//a");
+    private final By LOCATOR_BUTTON_REGISTRATIONS = By.xpath(".//button[@class='btn btn-default short']");
 
 }
