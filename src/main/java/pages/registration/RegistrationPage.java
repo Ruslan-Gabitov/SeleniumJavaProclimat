@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
 
+import java.util.Map;
+
+import static pages.registration.FakeDataGeneration.getRegistrationData;
+
 public class RegistrationPage extends BasePage {
 
     public RegistrationPage(WebDriver driver) {
@@ -17,4 +21,20 @@ public class RegistrationPage extends BasePage {
     private final By LOCATOR_CHECKBOX_PERSONAL_DATA = By.xpath(".//label[@for='licenses_register']//a");
     private final By LOCATOR_BUTTON_REGISTRATIONS = By.xpath(".//button[@class='btn btn-default short']");
 
+    public RegistrationPage userRegistration () {
+        Map<String, String> registrationData = getRegistrationData();
+        driver.findElement(LOCATOR_INPUT_NAME).sendKeys(registrationData.get("fullName"));
+        driver.findElement(LOCATOR_INPUT_EMAIL).sendKeys(registrationData.get("email"));
+        driver.findElement(LOCATOR_INPUT_PHONE).sendKeys(registrationData.get("phoneNumber"));
+        driver.findElement(LOCATOR_INPUT_PASSWORD).sendKeys(registrationData.get("password"));
+        driver.findElement(LOCATOR_INPUT_CONFIRM_PASSWORD).sendKeys(registrationData.get("password"));
+
+        waitElementAppearDOM(LOCATOR_CHECKBOX_PERSONAL_DATA);
+        clickOffsetFromSelectedElement(driver.findElement(LOCATOR_CHECKBOX_PERSONAL_DATA), -200, 0);
+
+        waitElementAppearDOM(LOCATOR_BUTTON_REGISTRATIONS);
+        moveToElement(driver.findElement(LOCATOR_BUTTON_REGISTRATIONS)).click();
+
+        return this;
+    }
 }
