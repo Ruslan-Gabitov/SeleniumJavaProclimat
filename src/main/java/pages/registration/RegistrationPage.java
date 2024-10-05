@@ -22,6 +22,7 @@ public class RegistrationPage extends BasePage {
     private final By LOCATOR_INPUT_CONFIRM_PASSWORD = By.xpath(".//input[@id='input_CONFIRM_PASSWORD']");
     private final By LOCATOR_CHECKBOX_PERSONAL_DATA = By.xpath(".//label[@for='licenses_register']//a");
     private final By LOCATOR_BUTTON_REGISTRATIONS = By.xpath(".//button[@class='btn btn-default short']");
+    private final By LOCATOR_TAG_TITLE = By.xpath("//title");
 
     public RegistrationPage userRegistration() {
         Map<String, String> registrationData = getRegistrationData();
