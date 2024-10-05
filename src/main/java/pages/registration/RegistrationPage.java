@@ -40,6 +40,8 @@ public class RegistrationPage extends BasePage {
 
         String expectedTitle = "Климатическое оборудование купить в Перми, " +
                 "ПроКлимат - ремонт и обслуживание кондиционеров, водонагревателей";
+
+        waitElementAppearDOM(LOCATOR_TAG_TITLE);
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle, "Titles do not match");
