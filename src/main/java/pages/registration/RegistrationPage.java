@@ -13,6 +13,7 @@ public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
+
     private final By LOCATOR_INPUT_NAME = By.xpath(".//input[@id='input_NAME']");
     private final By LOCATOR_INPUT_EMAIL = By.xpath(".//input[@id='input_EMAIL']");
     private final By LOCATOR_INPUT_PHONE = By.xpath(".//input[@id='input_PERSONAL_PHONE']");
@@ -21,7 +22,7 @@ public class RegistrationPage extends BasePage {
     private final By LOCATOR_CHECKBOX_PERSONAL_DATA = By.xpath(".//label[@for='licenses_register']//a");
     private final By LOCATOR_BUTTON_REGISTRATIONS = By.xpath(".//button[@class='btn btn-default short']");
 
-    public RegistrationPage userRegistration () {
+    public RegistrationPage userRegistration() {
         Map<String, String> registrationData = getRegistrationData();
         driver.findElement(LOCATOR_INPUT_NAME).sendKeys(registrationData.get("fullName"));
         driver.findElement(LOCATOR_INPUT_EMAIL).sendKeys(registrationData.get("email"));
