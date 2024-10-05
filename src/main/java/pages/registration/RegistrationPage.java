@@ -2,6 +2,7 @@ package pages.registration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pages.base.BasePage;
 
 import java.util.Map;
@@ -36,6 +37,11 @@ public class RegistrationPage extends BasePage {
         waitElementAppearDOM(LOCATOR_BUTTON_REGISTRATIONS);
         moveToElement(driver.findElement(LOCATOR_BUTTON_REGISTRATIONS)).click();
 
+        String expectedTitle = "Климатическое оборудование купить в Перми, " +
+                "ПроКлимат - ремонт и обслуживание кондиционеров, водонагревателей";
+        String actualTitle = driver.getTitle();
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Titles do not match");
         return this;
     }
 }
