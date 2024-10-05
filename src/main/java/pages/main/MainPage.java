@@ -15,7 +15,7 @@ public class MainPage extends BasePage {
     private final By LOCATOR_USER_LOGIN_POPUP = By.xpath(".//input[@id='USER_LOGIN_POPUP']");
     private final By LOCATOR_USER_PASSWORD_POPUP = By.xpath(".//input[@id='USER_PASSWORD_POPUP']");
     private final By LOCATOR_REGISTRATION_BUTTON = By.xpath(".//div[@class='inner-table-block']//a");
-    private final By LOCATOR_TAG_TITLE = By.xpath(",//title");
+    private final By LOCATOR_TAG_TITLE = By.xpath("//title");
 
     public MainPage openPageRegistration() {
         waitElementIsVisible(driver.findElement(LOCATOR_MY_OFFICE)).click();
